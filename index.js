@@ -1,22 +1,32 @@
-const h1 = document.getElementById('main-title');
-// h1.style.textAlign = 'center';
-// h1.style.color = 'orange';
-// h1.style.backgroundColor = 'blue';
-// console.log(h1.style.textAlign = 'center');
-h1.className = 'heading';
-h1.textContent = 'Hi from javascript!';
-const p = document.getElementById('text');
-p.style.fontSize = '24px';
-p.style.lineHeight = '2.8px';
-p.textContent = 'Бажаю щастя та вдачі.'
-const word = 'image';
-const img = document.getElementById(word);
-img.src = 'https://piligrim.ua/wp-content/uploads/2021/10/sea_main.jpg';
-img.alt = 'sunset';
-img.width = 400;
-img.height = 400;
-img.style.objectFit = 'cover';
+const content = document.getElementById('content');
+content.className = 'content';
 const button = document.getElementById('button');
-button.style.width = '200px';
-button.style.height = '70px';
-button.textContent += ', please';
+button.addEventListener('click', function () {
+    alert('You make click on button.');
+});
+button.addEventListener('click', function () {
+    content.textContent += 'qwerty!';
+});
+button.addEventListener('click', function () {
+    button.style.width = '200px';
+});
+button.addEventListener('click', function () {
+    button.textContent = button.textContent === 'off' ? 'on' : 'off';
+    content.textContent = button.textContent === 'off' ? 'close' : 'open';
+    content.style.backgroundColor = button.textContent === 'off' ? content.style.backgroundColor = 'red' : content.style.backgroundColor = 'green';
+});
+const small1 = document.getElementById('small1');
+const small2 = document.getElementById('small2');
+const small3 = document.getElementById('small3');
+
+const big = document.getElementById('big');
+
+small1.addEventListener('click', function () {
+    big.src = small1.src;
+});
+small2.addEventListener('click', function () {
+    big.src = small2.src;
+});
+small3.addEventListener('click', function () {
+    big.src = small3.src;
+});
