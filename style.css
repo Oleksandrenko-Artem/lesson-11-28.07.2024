@@ -1,21 +1,18 @@
 img{
     object-fit: cover;
 }
-.heading{
-    color: pink;
-    background-color: black;
+.gallery{
     text-align: center;
-}
-.content{
-    width: 200px;
-    height: 100px;
-    background-color: orange;
 }
 .small{
     width: 50px;
     height: 50px;
 }
 .big{
-    width: 500px;
-    height: 500px;
+    width: 200px;
+    height: 200px;
+}
+.block{
+    min-height: 200px;
+    border: 2px solid #aaa;
 }

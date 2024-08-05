@@ -1,32 +1,28 @@
-const content = document.getElementById('content');
-content.className = 'content';
-const button = document.getElementById('button');
-button.addEventListener('click', function () {
-    alert('You make click on button.');
-});
-button.addEventListener('click', function () {
-    content.textContent += 'qwerty!';
-});
-button.addEventListener('click', function () {
-    button.style.width = '200px';
-});
-button.addEventListener('click', function () {
-    button.textContent = button.textContent === 'off' ? 'on' : 'off';
-    content.textContent = button.textContent === 'off' ? 'close' : 'open';
-    content.style.backgroundColor = button.textContent === 'off' ? content.style.backgroundColor = 'red' : content.style.backgroundColor = 'green';
-});
-const small1 = document.getElementById('small1');
-const small2 = document.getElementById('small2');
-const small3 = document.getElementById('small3');
+const bigImage = document.getElementById('big');
 
-const big = document.getElementById('big');
-
-small1.addEventListener('click', function () {
-    big.src = small1.src;
-});
-small2.addEventListener('click', function () {
-    big.src = small2.src;
-});
-small3.addEventListener('click', function () {
-    big.src = small3.src;
-});
+const smallImages = document.getElementsByClassName('small');
+for (const smallImage of smallImages) {
+    smallImage.addEventListener('click', () => {
+        bigImage.src = smallImage.src
+    })
+}
+const listFruites = document.getElementsByTagName('li');
+for (const listFruit of listFruites) {
+    listFruit.addEventListener('click', () => {
+        listFruit.style.backgroundColor = listFruit.style.backgroundColor === 'orange' ? '' : 'orange';
+    })
+}
+const block = document.getElementById('block');
+const buttonColors = document.getElementsByClassName('button');
+for (const buttonColor of buttonColors) {
+    buttonColor.style.backgroundColor = buttonColor.textContent;
+    buttonColor.addEventListener('click', () => {
+        block.style.backgroundColor = buttonColor.textContent;
+    });
+}
+const tasks = document.getElementsByClassName('task');
+for (const task of tasks) {
+    task.addEventListener('click', () => {
+        task.style.display = 'none';
+    });
+}
