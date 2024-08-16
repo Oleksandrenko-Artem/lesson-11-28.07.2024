@@ -1,4 +1,8 @@
-img{
+button{
+    background-color: inherit;
+    color: inherit;
+}
+/* img{
     object-fit: cover;
 }
 .gallery{
@@ -15,4 +19,24 @@ img{
 .block{
     min-height: 200px;
     border: 2px solid #aaa;
+} */
+/* .button{
+    font-size: 20px;
+    color: darkblue;
+}
+.active{
+    background-color: blueviolet;
+}
+.shadow{
+    box-shadow: inset 1px 1px 3px black;
+}
+.big-text{
+    font-size: 30px;
+}
+.hide{
+    display: none;
+} */
+.dark{
+    background-color: black;
+    color: white;
 }
