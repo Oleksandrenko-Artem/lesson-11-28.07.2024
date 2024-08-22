@@ -90,8 +90,15 @@
 //     picture.classList.toggle('hide');
 // })
 
-const buttonTheme = document.querySelector('button:first-of-type');
-buttonTheme.addEventListener('click', () => {
-    buttonTheme.textContent = buttonTheme.textContent === 'light' ? 'dark' : 'light';
-    document.body.classList.toggle('dark');
+// const buttonTheme = document.querySelector('button:first-of-type');
+// buttonTheme.addEventListener('click', () => {
+//     buttonTheme.textContent = buttonTheme.textContent === 'light' ? 'dark' : 'light';
+//     document.body.classList.toggle('dark');
+// });
+
+const wrapper = document.getElementById('wrapper');
+const block = document.getElementById('block');
+wrapper.addEventListener('mousemove', (event) => {
+    block.style.left = event.clientX + 'px';
+    block.style.top = event.clientY + 'px';
 });
