@@ -96,9 +96,53 @@
 //     document.body.classList.toggle('dark');
 // });
 
-const wrapper = document.getElementById('wrapper');
-const block = document.getElementById('block');
-wrapper.addEventListener('mousemove', (event) => {
-    block.style.left = event.clientX + 'px';
-    block.style.top = event.clientY + 'px';
-});
+// const wrapper = document.getElementById('wrapper');
+// const block = document.getElementById('block');
+// wrapper.addEventListener('mousemove', (event) => {
+//      block.style.left = event.clientX + 'px';
+//      block.style.top = event.clientY + 'px';
+// });
+
+// let x = 0;
+// let y = 0;
+// const step = 5;
+
+// window.addEventListener('keydown', (event) => {
+//     if (event.key === 'ArrowLeft') {
+//         x-=step;
+//     }
+//     if (event.key === 'ArrowRight') {
+//         x+=step;
+//     }
+//     if (event.key === 'ArrowUp') {
+//         y-=step;
+//     }
+//     if (event.key === 'ArrowDown') {
+//         y+=step;
+//     }
+//     block.style.left = x + 'px';
+//     block.style.top = y + 'px';
+// });
+
+const products = document.querySelectorAll('#shop .product');
+const check = document.querySelector('#shop h1 span');
+products.forEach((product) => {
+    if (product.dataset.category === 'fruits&veget') {
+        product.style.backgroundColor = 'green';
+    }
+})
+let summa = 0;
+check.textContent = summa;
+    const addToCart = (event) => {
+        summa += Number(event.currentTarget.dataset.price);
+        if (summa > 150) {
+            alert('Ви перевищили ліміт на картці');
+            event.currentTarget.removeEventListener('click', addToCart);
+            return;
+        }
+        event.currentTarget.style.backgroundColor = 'red';
+        check.textContent = summa;
+    };
+products.forEach((product) => {
+    product.addEventListener('click', addToCart);
+})
